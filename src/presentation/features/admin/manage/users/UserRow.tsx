@@ -80,7 +80,7 @@ export default function UserRow({ user, currentUserRole, onUserUpdated, onUserRe
     <tr>
       <td className="p-2 border">
         {isEditing ? <input {...register("name")} className="w-full p-1 border rounded" /> : user.name ?? "-"}
-        {errors.name && <p className="text-xs text-red-500">{errors.name.message}</p>}
+        {errors.name && <p className="text-xs text-error-500">{errors.name.message}</p>}
       </td>
       <td className="p-2 border">
         {isEditing ? (
@@ -92,7 +92,7 @@ export default function UserRow({ user, currentUserRole, onUserUpdated, onUserRe
         ) : (
           user.phoneNumber
         )}
-        {errors.phoneNumber && <p className="text-xs text-red-500">{errors.phoneNumber.message}</p>}
+        {errors.phoneNumber && <p className="text-xs text-error-500">{errors.phoneNumber.message}</p>}
       </td>
       <td className="p-2 border">
         {isEditing ? (
@@ -100,11 +100,11 @@ export default function UserRow({ user, currentUserRole, onUserUpdated, onUserRe
         ) : (
           user.address?.[0]?.value ?? "-"
         )}
-        {errors.address?.[0]?.value && <p className="text-xs text-red-500">{errors.address[0].value?.message}</p>}
+        {errors.address?.[0]?.value && <p className="text-xs text-error-500">{errors.address[0].value?.message}</p>}
       </td>
       <td className="p-2 border">
         {isEditing ? <input {...register("email")} className="w-full p-1 border rounded" /> : user.email ?? "-"}
-        {errors.email && <p className="text-xs text-red-500">{errors.email.message}</p>}
+        {errors.email && <p className="text-xs text-error-500">{errors.email.message}</p>}
       </td>
       <td className="p-2 border">
         {isEditing ? (
@@ -120,12 +120,12 @@ export default function UserRow({ user, currentUserRole, onUserUpdated, onUserRe
         ) : (
           user.role
         )}
-        {errors.role && <p className="text-xs text-red-500">{errors.role.message}</p>}
+        {errors.role && <p className="text-xs text-error-500">{errors.role.message}</p>}
       </td>
       <td className="p-2 border">
         {isEditing ? (
           <div className="flex gap-2">
-            <button type="button" onClick={handleSubmit(onSubmit)} disabled={isSubmitting} className="text-green-600">
+            <button type="button" onClick={handleSubmit(onSubmit)} disabled={isSubmitting} className="text-primary-500">
               <SaveIcon fontSize="small" />
             </button>
             <button type="button" onClick={handleCancel} className="text-gray-600">

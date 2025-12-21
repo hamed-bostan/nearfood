@@ -23,10 +23,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className="antialiased">
         <ThemeRegistry>
           <AuthProvider>
-            <AppProviders>{children}</AppProviders>
+            <AppProviders>
+              {children}
+              <ToastProvider />
+            </AppProviders>
           </AuthProvider>
         </ThemeRegistry>
-        <ToastProvider />
       </body>
     </html>
   );

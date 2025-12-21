@@ -16,7 +16,7 @@ export default function HeaderDesktop({ label, style, button, handleClick }: Hea
   return (
     <div className={`${pathname === "/userpanel" && "hidden"} md:block ${style}`}>
       <div className="flex items-center justify-between mb-2">
-        <p className="block text-[#353535]">{label}</p>
+        <p className="block text-gray-800">{label}</p>
         {button && (
           <CustomButton
             variant="outlined"

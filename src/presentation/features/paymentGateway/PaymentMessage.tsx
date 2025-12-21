@@ -39,7 +39,7 @@ export default function PaymentMessage({
       <div className="flex justify-center w-full mt-12 gap-x-4 md:mb-14">
         <Link
           href={"/"}
-          className="text-[#417F56] text-xs md:text-sm border border-[#417F56] w-full md:w-44 h-8 md:h-9 hover:text-[#FFF] hover:bg-[#326343] rounded flex justify-center items-center"
+          className="text-primary-500 text-xs md:text-sm border border-primary-500 w-full md:w-44 h-8 md:h-9 hover:text-gray-50 hover:bg-[#326343] rounded flex justify-center items-center"
         >
           بازگشت به صفحه اصلی
         </Link>

@@ -77,7 +77,7 @@ export default function OrderRow({ order, updateAction, onOrderUpdated, onOrderR
               <option value="ارسال شده">ارسال شده</option>
               <option value="لغو شده">لغو شده</option>
             </select>
-            {errors.status && <p className="text-sm text-red-500">{errors.status.message}</p>}
+            {errors.status && <p className="text-sm text-error-500">{errors.status.message}</p>}
           </>
         ) : (
           <div
@@ -101,7 +101,7 @@ export default function OrderRow({ order, updateAction, onOrderUpdated, onOrderR
         </Link>
         {isRoot && isEditing && (
           <form onSubmit={handleSubmit(onSubmit)} className="inline-flex gap-2">
-            <button type="submit" className="text-green-600">
+            <button type="submit" className="text-primary-500">
               <SaveIcon fontSize="small" />
             </button>
             <button type="button" onClick={handleCancel} className="text-gray-600">
@@ -114,7 +114,7 @@ export default function OrderRow({ order, updateAction, onOrderUpdated, onOrderR
             <button onClick={() => setIsEditing(true)} className="text-blue-600">
               <EditIcon fontSize="small" />
             </button>
-            <button onClick={() => onOrderRemoved(order.id)} className="text-red-600">
+            <button onClick={() => onOrderRemoved(order.id)} className="text-error-500">
               <DeleteIcon fontSize="small" />
             </button>
           </div>

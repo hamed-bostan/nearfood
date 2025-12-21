@@ -1,13 +1,14 @@
 import { useFormContext, Controller } from "react-hook-form";
 import Checkbox from "@mui/material/Checkbox";
 import { FormControlLabel } from "@mui/material";
+import { gray, success } from "@/lib/theme/colors";
 
 export default function ApplicantFeatures() {
   const { control } = useFormContext();
 
   return (
     <div>
-      <p className="text-[#717171] block mb-4">ملک متقاضی:</p>
+      <p className="text-gray-700 block mb-4">ملک متقاضی:</p>
       <div className="grid grid-cols-2 gap-y-2">
         <Controller
           name="hasBusinessLicense"
@@ -20,15 +21,15 @@ export default function ApplicantFeatures() {
                   checked={!!field.value}
                   size="small"
                   sx={{
-                    color: "#00BA88",
+                    color: success[300],
                     "&.Mui-checked": {
-                      color: "#00BA88",
+                      color: success[300],
                     },
                   }}
                 />
               }
               label="پروانه کسب دارد."
-              sx={{ color: "#717171", width: "fit-content" }}
+              sx={{ color: gray[700], width: "fit-content" }}
             />
           )}
         />
@@ -43,15 +44,15 @@ export default function ApplicantFeatures() {
                   checked={!!field.value}
                   size="small"
                   sx={{
-                    color: "#00BA88",
+                    color: success[300],
                     "&.Mui-checked": {
-                      color: "#00BA88",
+                      color: success[300],
                     },
                   }}
                 />
               }
               label="پارکینگ دارد."
-              sx={{ color: "#717171", width: "fit-content" }}
+              sx={{ color: gray[700], width: "fit-content" }}
             />
           )}
         />
@@ -66,15 +67,15 @@ export default function ApplicantFeatures() {
                   checked={!!field.value}
                   size="small"
                   sx={{
-                    color: "#00BA88",
+                    color: success[300],
                     "&.Mui-checked": {
-                      color: "#00BA88",
+                      color: success[300],
                     },
                   }}
                 />
               }
               label="آشپزخانه دارد."
-              sx={{ color: "#717171", width: "fit-content" }}
+              sx={{ color: gray[700], width: "fit-content" }}
             />
           )}
         />
@@ -89,15 +90,15 @@ export default function ApplicantFeatures() {
                   checked={!!field.value}
                   size="small"
                   sx={{
-                    color: "#00BA88",
+                    color: success[300],
                     "&.Mui-checked": {
-                      color: "#00BA88",
+                      color: success[300],
                     },
                   }}
                 />
               }
               label="انبار دارد."
-              sx={{ color: "#717171", width: "fit-content" }}
+              sx={{ color: gray[700], width: "fit-content" }}
             />
           )}
         />

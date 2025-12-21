@@ -12,7 +12,7 @@ export default function Banner({ styleContainer = "", imageSrc, text, isButton =
   return (
     <section className={`relative h-44 mb-6 md:h-48 ${styleContainer}`}>
       <Image src={imageSrc} alt={text} priority className="object-cover w-full h-full" />
-      <h1 className="absolute top-1/2 right-1/2 text-[#E5F2E9] -translate-y-1/2 translate-x-1/2 text-nowrap md:text-xl">
+      <h1 className="absolute top-1/2 right-1/2 text-primary-50 -translate-y-1/2 translate-x-1/2 text-nowrap md:text-xl">
         {text}
       </h1>
       {isButton && (

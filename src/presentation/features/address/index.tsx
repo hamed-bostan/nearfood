@@ -15,6 +15,7 @@ import { AddressService } from "@/application/services/address.service";
 import { toast } from "react-toastify";
 import { useOrderContext } from "@/context/OrderContext";
 import { useAddressLogic } from "@/hooks/useAddressLogic";
+import { gray, primary } from "@/lib/theme/colors";
 
 export default function Address({ initialAddresses = [] }: { initialAddresses?: AddressType[] }) {
   const { data: session } = useSession();
@@ -84,16 +85,16 @@ export default function Address({ initialAddresses = [] }: { initialAddresses?: 
   return (
     <div>
       {selectedAddress && !isEditing ? (
-        <div className="bg-[#F9F9F9] rounded-md p-4 text-xs text-[#717171] border-2 border-[#417F56]">
-          <p className="text-[#353535] font-medium mb-2">آدرس انتخاب‌شده:</p>
-          <p className="text-[#353535]">{selectedAddress.value}</p>
+        <div className="bg-gray-100 rounded-md p-4 text-xs text-gray-700 border-2 border-primary-500">
+          <p className="text-gray-800 font-medium mb-2">آدرس انتخاب‌شده:</p>
+          <p className="text-gray-800">{selectedAddress.value}</p>
           <Button
             onClick={handleChange}
             variant="outlined"
             sx={{
               mt: 2,
-              color: "#417F56",
-              borderColor: "#417F56",
+              color: primary[500],
+              borderColor: primary[500],
               "&:hover": { backgroundColor: "#417F561A" },
             }}
           >
@@ -131,14 +132,14 @@ export default function Address({ initialAddresses = [] }: { initialAddresses?: 
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            bgcolor: "#EDEDED",
+            bgcolor: gray[200],
             p: 2,
           }}
         >
-          <p className="text-sm md:text-base text-[#353535] select-none font-medium">
+          <p className="text-sm md:text-base text-gray-800 select-none font-medium">
             {step === "location" ? "افزودن آدرس" : editIndex !== null ? "ویرایش آدرس" : "اضافه کردن جزییات"}
           </p>
-          <Button onClick={handleCloseDialog} sx={{ color: "#717171" }}>
+          <Button onClick={handleCloseDialog} sx={{ color: gray[700] }}>
             <CloseIcon />
           </Button>
         </DialogTitle>

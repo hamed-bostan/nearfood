@@ -8,6 +8,7 @@ import starRateFillIcon from "@/assets/images/icons/star-rate-fill.svg";
 import { calculateDiscountPrice } from "@/lib/utils/calculateDiscountPrice";
 import Image from "next/image";
 import { ProductItemProps } from "@/types/branch.types";
+import { gray, primary } from "@/lib/theme/colors";
 
 export function OfferDetails({ item }: ProductItemProps) {
   const { id, title, price, discount } = item;
@@ -26,16 +27,16 @@ export function OfferDetails({ item }: ProductItemProps) {
   }
 
   return (
-    <div className="col-span-2 row-span-3 grid grid-cols-2 p-2 pt-1 text-[#353535] text-xs gap-y-1 md:text-sm md:gap-y-2 md:p-3 h-32 md:h-40">
+    <div className="col-span-2 row-span-3 grid grid-cols-2 p-2 pt-1 text-gray-800 text-xs gap-y-1 md:text-sm md:gap-y-2 md:p-3 h-32 md:h-40">
       <h3 className="text-sm text-center col-span-full md:text-base md:font-semibold">{title}</h3>
       <button type={"button"} aria-label={`Add ${title} to favorites`} className="ml-auto">
-        <FavoriteBorderOutlinedIcon sx={{ color: "#ADADAD", fontSize: 18 }} />
+        <FavoriteBorderOutlinedIcon sx={{ color: gray[500], fontSize: 18 }} />
       </button>
       {discount && (
         <p className="flex items-center w-full mr-auto gap-x-1">
-          <del className="text-[#ADADAD] line-through">{formatToPersianStyle(price)}</del>
+          <del className="text-gray-500 line-through">{formatToPersianStyle(price)}</del>
           <ins
-            className="text-[#C30000] bg-[#FFF2F2] rounded-lg text-center mr-auto min-w-8 md:min-w-10"
+            className="text-error-500 bg-error-50 rounded-lg text-center mr-auto min-w-8 md:min-w-10"
             style={{ textDecoration: "none" }}
           >
             {formatToPersianStyle(discount)} %
@@ -50,7 +51,7 @@ export function OfferDetails({ item }: ProductItemProps) {
       <CustomButton
         onClick={handleAddToCart}
         sx={{
-          backgroundColor: isAddedToCart ? "#717171" : "#417F56",
+          backgroundColor: isAddedToCart ? gray[700] : primary[500],
           pointerEvents: isAddedToCart ? "none" : "auto",
           gridColumn: "span 2",
           height: { xs: "2rem", md: "2.5rem" },

@@ -83,7 +83,7 @@ export default function TestimonialRow({
         {isEditing ? (
           <>
             <input {...register("name")} className="w-full p-1 border rounded" />
-            {errors.name && <p className="text-sm text-red-500">{errors.name.message}</p>}
+            {errors.name && <p className="text-sm text-error-500">{errors.name.message}</p>}
           </>
         ) : (
           testimonial.name
@@ -94,7 +94,7 @@ export default function TestimonialRow({
         {isEditing ? (
           <>
             <input {...register("comment")} className="w-full p-1 border rounded" />
-            {errors.comment && <p className="text-sm text-red-500">{errors.comment.message}</p>}
+            {errors.comment && <p className="text-sm text-error-500">{errors.comment.message}</p>}
           </>
         ) : (
           testimonial.comment
@@ -104,7 +104,7 @@ export default function TestimonialRow({
       <td className="p-2 text-center border">
         {isRoot && isEditing && (
           <form onSubmit={handleSubmit(onSubmit)} className="flex gap-2">
-            <button type="submit" className="text-green-600">
+            <button type="submit" className="text-primary-500">
               <SaveIcon fontSize="small" />
             </button>
             <button type="button" onClick={handleCancel} className="text-gray-600">
@@ -118,7 +118,7 @@ export default function TestimonialRow({
             <button onClick={() => setIsEditing(true)} className="text-blue-600">
               <EditIcon fontSize="small" />
             </button>
-            <button onClick={() => onTestimonialRemoved(testimonial.id)} className="text-red-600">
+            <button onClick={() => onTestimonialRemoved(testimonial.id)} className="text-error-500">
               <DeleteIcon fontSize="small" />
             </button>
           </div>

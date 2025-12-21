@@ -6,7 +6,7 @@ import { OfferDetails } from "./OfferDetails";
 
 export default function FoodCard({ item }: ProductItemProps) {
   return (
-    <article className="bg-[#fff] border border-[#CBCBCB] overflow-hidden rounded-sm w-48 md:w-52 md:rounded-lg">
+    <article className="bg-gray-50 border border-gray-400 overflow-hidden rounded-sm w-48 md:w-52 md:rounded-lg">
       <DisplayingImage item={item} />
       <OfferDetails item={item} />
     </article>

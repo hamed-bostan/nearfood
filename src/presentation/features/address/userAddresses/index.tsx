@@ -18,8 +18,8 @@ export default function UserAddresses({ addresses, onOpenDialog, onDelete, onEdi
 
   return (
     <div
-      className={`md:border md:border-[#CBCBCB] md:rounded-lg md:p-5 ${
-        pathname === "/checkout" ? "border border-[#CBCBCB] p-4 pb-6 rounded-lg" : ""
+      className={`md:border md:border-gray-400 md:rounded-lg md:p-5 ${
+        pathname === "/checkout" ? "border border-gray-400 p-4 pb-6 rounded-lg" : ""
       }`}
     >
       <HeaderDesktop label="آدرس ها" style="mb-4" button={true} handleClick={onOpenDialog} />

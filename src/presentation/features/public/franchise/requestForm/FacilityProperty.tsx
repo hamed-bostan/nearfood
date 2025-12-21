@@ -4,7 +4,7 @@ import ApplicantFeatures from "./ApplicantFeatures";
 export default function FacilityProperty() {
   return (
     <div>
-      <span className="mb-6 block text-[#353535]">امکانات ملک متقاضی</span>
+      <span className="mb-6 block text-gray-800">امکانات ملک متقاضی</span>
       <div className="grid grid-cols-2 mb-4">
         <ApplicantFeatures />
       </div>

@@ -2,15 +2,16 @@ import Checkbox from "@mui/material/Checkbox";
 import { Divider } from "@mui/material";
 import { WalletOutlined, AddCardOutlined } from "@mui/icons-material";
 import { useOrderContext } from "@/context/OrderContext";
+import { gray, success } from "@/lib/theme/colors";
 
 export default function PaymentMethod() {
   const { paymentMethod, setPaymentMethod } = useOrderContext();
 
   return (
-    <div className="border border-[#CBCBCB] rounded-lg text-xs text-[#717171] p-4 md:text-sm md:flex justify-between mb-3 md:mb-5">
+    <div className="border border-gray-400 rounded-lg text-xs text-gray-700 p-4 md:text-sm md:flex justify-between mb-3 md:mb-5">
       <div className="flex items-center mb-2 gap-x-1 md:mb-0">
-        <WalletOutlined sx={{ color: "#353535", fontSize: { xs: 18, md: 20 } }} />
-        <span className="text-[#353535] text-sm md:text-base">روش پرداخت</span>
+        <WalletOutlined sx={{ color: gray[800], fontSize: { xs: 18, md: 20 } }} />
+        <span className="text-gray-800 text-sm md:text-base">روش پرداخت</span>
       </div>
       <Divider className="md:hidden" />
 
@@ -23,8 +24,8 @@ export default function PaymentMethod() {
           size="small"
           sx={{
             "&.MuiCheckbox-root": { p: 0 },
-            color: "#00BA88",
-            "&.Mui-checked": { color: "#00BA88" },
+            color: success[300],
+            "&.Mui-checked": { color: success[300] },
           }}
         />
         <div className="flex flex-col gap-y-1">
@@ -33,7 +34,7 @@ export default function PaymentMethod() {
           </label>
           <span className="hidden text-xs lg:block text-nowrap">آنلاین پرداخت میکنم.</span>
         </div>
-        <AddCardOutlined sx={{ color: "#717171", fontSize: { xs: 18, md: 20 } }} />
+        <AddCardOutlined sx={{ color: gray[700], fontSize: { xs: 18, md: 20 } }} />
       </div>
 
       <div className="flex items-center gap-x-1 lg:gap-x-2">
@@ -45,8 +46,8 @@ export default function PaymentMethod() {
           size="small"
           sx={{
             "&.MuiCheckbox-root": { p: 0 },
-            color: "#00BA88",
-            "&.Mui-checked": { color: "#00BA88" },
+            color: success[300],
+            "&.Mui-checked": { color: success[300] },
           }}
         />
         <div className="flex flex-col gap-y-1">

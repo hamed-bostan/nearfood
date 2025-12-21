@@ -1,3 +1,4 @@
+import { primary } from "@/lib/theme/colors";
 import { Button, ButtonProps } from "@mui/material";
 import { ReactNode } from "react";
 
@@ -29,7 +30,7 @@ export default function CustomButton({
       startIcon={startIcon} // Icon at the start
       endIcon={endIcon} // Icon at the end
       sx={{
-        backgroundColor: "#417F56",
+        backgroundColor: primary[500],
         "&:hover": {
           backgroundColor: "#326343",
         },

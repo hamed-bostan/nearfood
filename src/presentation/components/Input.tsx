@@ -1,3 +1,4 @@
+import { gray } from "@/lib/theme/colors";
 import { TextField, TextFieldProps } from "@mui/material";
 import { forwardRef } from "react";
 
@@ -11,9 +12,9 @@ type InputProps = TextFieldProps & {
 const Input = forwardRef(function Input(
   {
     label,
-    labelColor = "#717171",
-    textColor = "#353535",
-    borderColor = "#CBCBCB",
+    labelColor = gray[700],
+    textColor = gray[800],
+    borderColor = gray[400],
     sx = {},
     ...props
   }: InputProps,

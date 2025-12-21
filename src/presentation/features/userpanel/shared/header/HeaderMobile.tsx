@@ -4,6 +4,7 @@ import { ArrowBackOutlined, ArrowForwardOutlined } from "@mui/icons-material";
 import { Dispatch, SetStateAction } from "react";
 import { useLogoutDialog } from "@/context/logout-dialog.context";
 import { tabsConfig } from "@/presentation/constants/userpanel.constants";
+import { gray } from "@/lib/theme/colors";
 
 type HeaderMobileProps = {
   setActiveTab: Dispatch<SetStateAction<number>>;
@@ -35,19 +36,19 @@ export default function HeaderMobile({ setActiveTab, activeTab }: HeaderMobilePr
         onClick={handleNext}
         sx={{
           fontSize: 16,
-          color: activeTab === tabsConfig.length - 1 ? "#A0A0A0" : "#353535",
+          color: activeTab === tabsConfig.length - 1 ? "#A0A0A0" : gray[800],
           cursor: "pointer",
           pointerEvents: activeTab === tabsConfig.length - 1 ? "none" : "auto",
         }}
       />
-      <h1 className="text-sm font-bold text-[#353535]">{tabsConfig[activeTab].label}</h1>
+      <h1 className="text-sm font-bold text-gray-800">{tabsConfig[activeTab].label}</h1>
       <ArrowBackOutlined
         onClick={handlePrevious}
         sx={{
           opacity: activeTab === 0 ? 0 : 1, // Use 0 or 1 for opacity
           cursor: activeTab !== 0 ? "pointer" : "auto", // Use 'pointer' or 'auto' for cursor
           fontSize: 16,
-          color: "#353535",
+          color: gray[800],
         }}
       />
     </div>

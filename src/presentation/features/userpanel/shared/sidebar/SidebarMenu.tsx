@@ -33,9 +33,9 @@ export default function SidebarMenu({ setActiveTab, activeTab }: SidebarProps) {
         const iconElement = <item.icon sx={{ fontSize: isActive ? 20 : 18 }} />;
 
         const textClass = `
-          text-[#353535] flex gap-x-1 w-fit items-center text-sm cursor-pointer 
-          ${isActive ? "text-[#417F56]" : ""}
-          ${isLast ? "text-[#C30000]" : ""}
+          text-gray-800 flex gap-x-1 w-fit items-center text-sm cursor-pointer 
+          ${isActive ? "text-primary-500" : ""}
+          ${isLast ? "text-error-500" : ""}
         `;
 
         if (isLink(item)) {

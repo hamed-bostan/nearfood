@@ -82,7 +82,7 @@ export default function ProductRow({ product, onUpdateRequest, onProductRemoved,
         {isEditing ? (
           <>
             <input {...register("title")} className="w-full p-1 border rounded" />
-            {errors.title && <p className="text-sm text-red-500">{errors.title.message}</p>}
+            {errors.title && <p className="text-sm text-error-500">{errors.title.message}</p>}
           </>
         ) : (
           product.title
@@ -97,7 +97,7 @@ export default function ProductRow({ product, onUpdateRequest, onProductRemoved,
               {...register("price", { valueAsNumber: true })}
               className="w-full p-1 border rounded"
             />
-            {errors.price && <p className="text-sm text-red-500">{errors.price.message}</p>}
+            {errors.price && <p className="text-sm text-error-500">{errors.price.message}</p>}
           </>
         ) : (
           product.price.toLocaleString()
@@ -112,7 +112,7 @@ export default function ProductRow({ product, onUpdateRequest, onProductRemoved,
               {...register("discount", { valueAsNumber: true })}
               className="w-full p-1 border rounded"
             />
-            {errors.discount && <p className="text-sm text-red-500">{errors.discount.message}</p>}
+            {errors.discount && <p className="text-sm text-error-500">{errors.discount.message}</p>}
           </>
         ) : (
           `${product.discount}%`
@@ -123,7 +123,7 @@ export default function ProductRow({ product, onUpdateRequest, onProductRemoved,
         {isEditing ? (
           <>
             <input {...register("category")} className="w-full p-1 border rounded" />
-            {errors.category && <p className="text-sm text-red-500">{errors.category.message}</p>}
+            {errors.category && <p className="text-sm text-error-500">{errors.category.message}</p>}
           </>
         ) : (
           product.category
@@ -133,7 +133,7 @@ export default function ProductRow({ product, onUpdateRequest, onProductRemoved,
       <td className="p-2 text-center border">
         {isRoot && isEditing && (
           <form onSubmit={handleSubmit(onSubmit)} className="flex gap-2">
-            <button type="submit" className="text-green-600">
+            <button type="submit" className="text-primary-500">
               <SaveIcon fontSize="small" />
             </button>
             <button type="button" onClick={handleCancel} className="text-gray-600">
@@ -147,7 +147,7 @@ export default function ProductRow({ product, onUpdateRequest, onProductRemoved,
             <button onClick={() => setIsEditing(true)} className="text-blue-600">
               <EditIcon fontSize="small" />
             </button>
-            <button onClick={() => onProductRemoved(product.id)} className="text-red-600">
+            <button onClick={() => onProductRemoved(product.id)} className="text-error-500">
               <DeleteIcon fontSize="small" />
             </button>
           </div>

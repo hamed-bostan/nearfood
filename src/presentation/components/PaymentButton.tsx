@@ -24,7 +24,7 @@ export default function PaymentButton({ amount }: { amount: number }) {
     <button
       onClick={handlePayment}
       disabled={isPending}
-      className="px-4 py-2 text-white bg-green-600 rounded hover:bg-green-700 disabled:opacity-50"
+      className="px-4 py-2 text-gray-50 bg-primary-500 rounded hover:bg-primary-300 disabled:opacity-50"
     >
       {isPending ? "در حال انتقال..." : "پرداخت"}
     </button>
