@@ -7,6 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import image1 from "@/assets/images/bannerImages/banner-11.jpg";
 import { MobileDrawerProps, NavigationListProps } from "@/types/app-header.types";
+import { gray } from "@/lib/theme/colors";
 
 export default function MobileDrawer({ navigationItems, isDrawerOpen, handleClose }: MobileDrawerProps) {
   const filteredItems = navigationItems.filter((item) => item.path !== "/franchise");
@@ -16,7 +17,7 @@ export default function MobileDrawer({ navigationItems, isDrawerOpen, handleClos
       <div className="w-64 h-full">
         <div className="relative">
           <Image src={image1} alt="Banner image" className="w-full h-full" />
-          <IconButton onClick={handleClose} sx={{ color: "#fff", position: "absolute", top: 4, right: 4 }}>
+          <IconButton onClick={handleClose} sx={{ color: gray[50], position: "absolute", top: 4, right: 4 }}>
             <CloseIcon />
           </IconButton>
         </div>
@@ -50,11 +51,11 @@ function NavigationList({ item, isLast, handleClose }: NavigationListProps) {
             className={`w-3 h-3 ${pathname === item.path ? "w-4 h-4" : ""}`}
           />
         )}
-        <span className={`text-xs text-[#353535] ${pathname === item.path ? "text-[#417F56] text-lg font-bold" : ""}`}>
+        <span className={`text-xs text-gray-800 ${pathname === item.path ? "text-primary-500 text-lg font-bold" : ""}`}>
           {item.text}
         </span>
       </Link>
-      {isLast && <Divider sx={{ borderColor: "#CBCBCB" }} />}
+      {isLast && <Divider sx={{ borderColor: gray[400] }} />}
     </>
   );
 }

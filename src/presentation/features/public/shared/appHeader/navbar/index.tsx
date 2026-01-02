@@ -3,6 +3,7 @@ import ActionButton from "./ActionButton";
 import DesktopNavigation from "./DesktopNavigation";
 import { NavigationItem, VoidHandler } from "@/types/app-header.types";
 import Logo from "../../logo";
+import { primary } from "@/lib/theme/colors";
 
 type NavbarProps = {
   navigationItems: NavigationItem[];
@@ -30,7 +31,7 @@ function Menu({ handleOpen }: MenuProps) {
     <MenuIcon
       onClick={handleOpen}
       sx={{
-        color: "#417F56",
+        color: primary[500],
         width: "24px",
         height: "24px",
         display: { md: "none" },

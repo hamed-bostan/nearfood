@@ -1,4 +1,4 @@
-import { gray } from "@/lib/theme/colors";
+import { gray, primary } from "@/lib/theme/colors";
 import CustomButton from "@/presentation/components/CustomButton";
 import { descriptionContent } from "@/presentation/constants/landing";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
@@ -19,7 +19,7 @@ export default function DescriptionDetails() {
           width: { sx: "9.5rem", md: "11.5rem" },
           backgroundColor: "transparent",
           marginLeft: "auto",
-          "&:hover": { backgroundColor: "#326343" },
+          "&:hover": { backgroundColor: primary[700] },
           color: gray[50],
         }}
       >

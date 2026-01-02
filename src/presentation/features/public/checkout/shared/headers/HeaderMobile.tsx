@@ -7,6 +7,7 @@ import { RootState } from "@/store";
 import { clear } from "@/store/cart.slice";
 import { IconButton } from "@mui/material";
 import { tabsConfig } from "@/presentation/constants/checkout";
+import { gray } from "@/lib/theme/colors";
 
 export default function HeaderMobile() {
   const { activeTab, setActiveTab } = useCheckoutTab();
@@ -38,22 +39,22 @@ export default function HeaderMobile() {
         onClick={handleNext}
         disabled={activeTab === tabsConfig.length - 1}
         sx={{
-          color: activeTab === tabsConfig.length - 1 ? "#A0A0A0" : "#353535",
+          color: activeTab === tabsConfig.length - 1 ? "#A0A0A0" : gray[800],
         }}
       >
         <ArrowForwardOutlined fontSize="small" />
       </IconButton>
 
-      <h1 className="text-sm font-bold text-[#353535]">{tabsConfig[activeTab].label}</h1>
+      <h1 className="text-sm font-bold text-gray-800">{tabsConfig[activeTab].label}</h1>
       {activeTab > 0 ? (
-        <IconButton onClick={handlePrevious} sx={{ color: "#353535" }}>
+        <IconButton onClick={handlePrevious} sx={{ color: gray[800] }}>
           <ArrowBackOutlined fontSize="small" />
         </IconButton>
       ) : (
         <IconButton
           onClick={handleClearCart}
           disabled={isCartEmpty}
-          sx={{ color: isCartEmpty ? "#A0A0A0" : "#353535" }}
+          sx={{ color: isCartEmpty ? "#A0A0A0" : gray[800] }}
         >
           <DeleteOutlined fontSize="small" />
         </IconButton>

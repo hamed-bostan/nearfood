@@ -2,6 +2,7 @@ import { Divider } from "@mui/material";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 import { usePathname } from "next/navigation";
 import CustomButton from "@/presentation/components/CustomButton";
+import { primary } from "@/lib/theme/colors";
 
 type HeaderDesktopProps = {
   label: string;
@@ -28,12 +29,12 @@ export default function HeaderDesktop({ label, style, button, handleClick }: Hea
                 md: "flex",
               },
               backgroundColor: "transparent",
-              color: "#417F56",
+              color: primary[500],
               fontSize: "0.75rem",
               border: "none",
               "&:hover": {
                 backgroundColor: "transparent",
-                color: "#326343",
+                color: primary[700],
               },
             }}
           >

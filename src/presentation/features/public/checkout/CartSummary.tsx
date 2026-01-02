@@ -17,6 +17,7 @@ import { calculateOrderTotal, calculateTotalDiscount } from "@/domain/order/orde
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { notifyOrderWorkflow } from "@/infrastructure/apis/notifyOrderWorkflow.api";
+import { gray, warning } from "@/lib/theme/colors";
 
 export default function CartSummary({ phoneNumber }: { phoneNumber: string }) {
   const dispatch = useDispatch();
@@ -67,8 +68,8 @@ export default function CartSummary({ phoneNumber }: { phoneNumber: string }) {
 
   return (
     <div
-      className={`text-sm text-[#353535] md:border md:border-[#CBCBCB] md:p-4 lg:p-5 md:rounded-lg md:h-fit ${
-        hasBorder && "border border-[#CBCBCB] rounded-lg p-4"
+      className={`text-sm text-gray-800 md:border md:border-gray-400 md:p-4 lg:p-5 md:rounded-lg md:h-fit ${
+        hasBorder && "border border-gray-400 rounded-lg p-4"
       }`}
     >
       <div className="justify-between hidden mb-3 md:flex">
@@ -76,7 +77,7 @@ export default function CartSummary({ phoneNumber }: { phoneNumber: string }) {
         <IconButton onClick={handleClearCart} aria-label="حذف سبد خرید" size="small">
           <DeleteOutlined
             sx={{
-              color: "#353535",
+              color: gray[800],
             }}
           />
         </IconButton>
@@ -89,25 +90,25 @@ export default function CartSummary({ phoneNumber }: { phoneNumber: string }) {
       )}
       <div className="flex justify-between py-3">
         <span>تخفیف محصولات</span>
-        <span className="text-[#717171]">{formatToPersianStyle(totalDiscount)} تومان</span>
+        <span className="text-gray-700">{formatToPersianStyle(totalDiscount)} تومان</span>
       </div>
       <Divider />
       <div className="flex justify-between mt-3 mb-2">
         <span>هزینه ارسال</span>
-        <span className="text-[#717171]">0 تومان</span>
+        <span className="text-gray-700">0 تومان</span>
       </div>
       <div className="flex mb-3 gap-x-2">
         <div>
-          <ReportGmailerrorredOutlined fontSize="small" sx={{ color: "#A9791C" }} />
+          <ReportGmailerrorredOutlined fontSize="small" sx={{ color: warning[500] }} />
         </div>
-        <p className="text-xs text-[#A9791C]">
+        <p className="text-xs text-warning-500">
           هزینه ارسال در ادامه بر اساس آدرس، زمان و نحوه ارسال انتخابی شما محاسبه و به این مبلغ اضافه خواهد شد.
         </p>
       </div>
       <Divider />
       <div className="flex justify-between py-3">
         <span>مبلغ قابل پرداخت</span>
-        <span className="text-[#417F56]">{formatToPersianStyle(totalPayable)} تومان</span>
+        <span className="text-primary-500">{formatToPersianStyle(totalPayable)} تومان</span>
       </div>
       <CustomButton
         component={session ? "button" : Link}

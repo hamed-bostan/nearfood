@@ -1,4 +1,5 @@
 import { useCheckoutTab } from "@/context/checkout-tab.context";
+import { gray, primary } from "@/lib/theme/colors";
 import { tabsConfig } from "@/presentation/constants/checkout";
 
 export default function HeaderDesktop() {
@@ -16,11 +17,11 @@ export default function HeaderDesktop() {
         >
           <tab.icon
             sx={{
-              color: activeTab === tab.tabIndex ? "#417F56" : "#CBCBCB",
+              color: activeTab === tab.tabIndex ? primary[500] : gray[400],
               fontSize: activeTab === tab.tabIndex ? 20 : 18,
             }}
           />
-          <p className={`text-sm ${activeTab === tab.tabIndex ? "font-bold text-[#417F56]" : "text-[#CBCBCB]"}`}>
+          <p className={`text-sm ${activeTab === tab.tabIndex ? "font-bold text-primary-500" : "text-gray-400"}`}>
             {tab.label}
           </p>
         </button>

@@ -5,6 +5,7 @@ import CustomButton from "@/presentation/components/CustomButton";
 import { ChangeEvent, FormEvent, useContext, useEffect, useState } from "react";
 import { AddressContext } from "@/context/address.context";
 import { AddressType } from "@/application/schemas/address.schema";
+import { gray, primary } from "@/lib/theme/colors";
 
 export type AddressFormProps = {
   onSaveContactInfo: (newAddress: AddressType) => void;
@@ -48,8 +49,8 @@ export default function AddressForm({ onSaveContactInfo, onClose, defaultValues 
           sx={{
             width: "100%",
             backgroundColor: "transparent",
-            color: "#417F56",
-            "&:hover": { backgroundColor: "#417F56", color: "#fff" },
+            color: primary[500],
+            "&:hover": { backgroundColor: primary[500], color: gray[50] },
             border: "none",
           }}
         >

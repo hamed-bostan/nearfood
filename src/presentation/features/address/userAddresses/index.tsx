@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import CustomButton from "@/presentation/components/CustomButton";
 import HeaderDesktop from "@/presentation/features/userpanel/shared/header/HeaderDesktop";
 import { AddressType } from "@/application/schemas/address.schema";
+import { gray, primary } from "@/lib/theme/colors";
 
 type UserAddressesProps = {
   addresses: AddressType[];
@@ -32,13 +33,13 @@ export default function UserAddresses({ addresses, onOpenDialog, onDelete, onEdi
         sx={{
           display: pathname === "/checkout" ? "none" : { xs: "flex", md: "none" },
           backgroundColor: "transparent",
-          color: "#417F56",
-          border: "1px solid #417F56",
+          color: primary[500],
+          border: `1px solid ${primary[500]}`,
           mx: "auto",
           mt: 3,
           "&:hover": {
-            backgroundColor: "#326343",
-            color: "#fff",
+            backgroundColor: primary[700],
+            color: gray[50],
           },
         }}
       >

@@ -6,7 +6,7 @@ export default function CategoryCard({ item, setSelectedCategory, isSelected }: 
   return (
     <button
       onClick={() => setSelectedCategory(item)}
-      className="flex items-center gap-x-1 bg-[#EDEDED] rounded-md px-2 h-6 md:rounded-xl md:h-8"
+      className="flex items-center gap-x-1 bg-gray-200 rounded-md px-2 h-6 md:rounded-xl md:h-8"
     >
       <p className={`text-xs md:text-sm ${isSelected ? "text-primary-500" : "text-gray-800"}`}>{item}</p>
       <ArrowBackOutlinedIcon

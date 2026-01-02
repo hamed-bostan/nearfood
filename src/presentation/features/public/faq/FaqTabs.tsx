@@ -3,7 +3,7 @@ import { FaqTabsProps } from "@/types/faq.types";
 
 export default function FaqTabs({ handleTabClick, activeTab }: FaqTabsProps) {
   return (
-    <nav className="text-sm text-[#717171] bg-[#EDEDED] flex gap-x-4 h-10 px-5 items-center">
+    <nav className="text-sm text-gray-700 bg-gray-200 flex gap-x-4 h-10 px-5 items-center">
       {faqTabsData.map((tab) => (
         <button
           key={tab.id}

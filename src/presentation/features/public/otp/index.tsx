@@ -55,9 +55,9 @@ export default function Otp() {
         )}
       </div>
 
-      <p className="text-[#353535] text-xs text-center">
+      <p className="text-gray-800 text-xs text-center">
         ورود و عضویت در ترخینه به منزله قبول
-        <span className="text-[#417F56]"> قوانین و مقررات </span> است.
+        <span className="text-primary-500"> قوانین و مقررات </span> است.
       </p>
     </div>
   );

@@ -42,7 +42,7 @@ export default function EmptyStateMessage({ text, button, buttonText, href, onCl
                 backgroundColor: "transparent",
                 "&:hover": {
                   color: gray[50],
-                  backgroundColor: "#326343",
+                  backgroundColor: primary[700],
                 },
               }}
             >
@@ -64,7 +64,7 @@ export default function EmptyStateMessage({ text, button, buttonText, href, onCl
               backgroundColor: "transparent",
               "&:hover": {
                 color: gray[50],
-                backgroundColor: "#326343",
+                backgroundColor: primary[700],
               },
             }}
           >

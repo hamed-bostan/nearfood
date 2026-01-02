@@ -26,20 +26,12 @@ export default function PaymentMessage({
         alt="payment status image"
         className="w-32 mb-6 h-28 md:w-40 md:h-36 lg:w-48 lg:h-44 md:mb-12"
       />
-      <p
-        className={`mb-4 font-bold md:text-lg lg:text-xl md:mb-6 text-[${mainTextColor}]`}
-      >
-        {mainText}
-      </p>
-      <p
-        className={`text-xs md:text-base lg:text-lg text-[${secondaryTextColor}]`}
-      >
-        {secondaryText}
-      </p>
+      <p className={`mb-4 font-bold md:text-lg lg:text-xl md:mb-6 ${mainTextColor}`}>{mainText}</p>
+      <p className={`text-xs md:text-base lg:text-lg ${secondaryTextColor}`}>{secondaryText}</p>
       <div className="flex justify-center w-full mt-12 gap-x-4 md:mb-14">
         <Link
           href={"/"}
-          className="text-primary-500 text-xs md:text-sm border border-primary-500 w-full md:w-44 h-8 md:h-9 hover:text-gray-50 hover:bg-[#326343] rounded flex justify-center items-center"
+          className="text-primary-500 text-xs md:text-sm border border-primary-500 w-full md:w-44 h-8 md:h-9 hover:text-gray-50 hover:bg-primary-700 rounded flex justify-center items-center"
         >
           بازگشت به صفحه اصلی
         </Link>

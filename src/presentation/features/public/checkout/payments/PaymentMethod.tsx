@@ -56,7 +56,7 @@ export default function PaymentMethod() {
           </label>
           <span className="hidden text-xs lg:block text-nowrap">در محل پرداخت میکنم.</span>
         </div>
-        <WalletOutlined sx={{ color: "#717171", fontSize: { xs: 18, md: 20 } }} />
+        <WalletOutlined sx={{ color: gray[700], fontSize: { xs: 18, md: 20 } }} />
       </div>
     </div>
   );

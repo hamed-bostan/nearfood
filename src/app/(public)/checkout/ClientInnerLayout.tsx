@@ -33,7 +33,7 @@ function CheckoutContent({ children, phoneNumber }: ClientInnerLayoutProps) {
   const gridClass = isShoppingCartTab
     ? "md:grid lg:grid-cols-[60fr_40fr] md:gap-y-4 lg:gap-x-6"
     : "md:grid md:grid-cols-[70fr_40fr] md:gap-x-4 lg:gap-x-6";
-  const borderClass = isShoppingCartTab && !isEmptyCart ? "p-5 border border-[#CBCBCB] md:border-none rounded-lg" : "";
+  const borderClass = isShoppingCartTab && !isEmptyCart ? "p-5 border border-gray-400 md:border-none rounded-lg" : "";
 
   return (
     <section className="px-5 py-6 lg:px-10 2xl:px-28">

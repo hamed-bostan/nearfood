@@ -28,8 +28,8 @@ function NavigationList({ item }: NavigationListProps) {
     <div className="flex items-center gap-x-1">
       <Link href={item.path}>
         <span
-          className={`text-sm text-[#353535] ${
-            pathname === item.path ? "text-[#417F56] text-lg font-bold border-b border-current" : ""
+          className={`text-sm text-gray-800 ${
+            pathname === item.path ? "text-primary-500 text-lg font-bold border-b border-current" : ""
           }`}
         >
           {item.text}
