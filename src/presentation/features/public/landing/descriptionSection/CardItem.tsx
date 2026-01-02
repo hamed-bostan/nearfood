@@ -1,4 +1,9 @@
-import { CardItemProps } from "@/types/landing.types";
+import { ElementType } from "react";
+
+type CardItemProps = {
+  icon: ElementType;
+  text: string;
+};
 
 export default function CardItem({ icon: Icon, text }: CardItemProps) {
   return (

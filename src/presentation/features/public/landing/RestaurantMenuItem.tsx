@@ -1,7 +1,11 @@
-import { MenuItemProps } from "@/presentation/constants/landing";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
-export default function RestaurantMenuItem({ image, text }: MenuItemProps) {
+type RestaurantMenuItemProps = {
+  image: StaticImageData | string;
+  text: string;
+};
+
+export default function RestaurantMenuItem({ image, text }: RestaurantMenuItemProps) {
   return (
     <li className="relative flex justify-center w-full list-none h-28 lg:h-36">
       <figure className="flex justify-center">

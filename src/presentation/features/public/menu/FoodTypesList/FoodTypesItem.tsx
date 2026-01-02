@@ -1,6 +1,8 @@
 import { FoodType } from "@/types/food-types";
 
-export default function FoodTypesItem({ type }: FoodType) {
+type FoodTypesItemProps = Pick<FoodType, "type">;
+
+export default function FoodTypesItem({ type }: FoodTypesItemProps) {
   return (
     <p
       className={`border-b transition-all ${
