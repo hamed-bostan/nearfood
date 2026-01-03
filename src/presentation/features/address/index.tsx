@@ -21,7 +21,7 @@ export default function Address({ initialAddresses = [] }: { initialAddresses?: 
   const { data: session } = useSession();
   const { selectedAddress, setSelectedAddress } = useOrderContext();
   const { addresses, setAddresses, isLoading, fetchAddresses } = useUserAddresses(initialAddresses);
-  const { tempAddress, setTempAddress } = useContext(AddressContext)!;
+  const { tempAddress, setTempAddress, resetTempAddress } = useContext(AddressContext)!;
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState<"location" | "addressForm">("location");
   const [editIndex, setEditIndex] = useState<number | null>(null);
@@ -43,11 +43,8 @@ export default function Address({ initialAddresses = [] }: { initialAddresses?: 
     if (index !== null && addresses[index]) {
       setTempAddress(addresses[index]);
     } else {
-      setTempAddress({
-        id: crypto.randomUUID(),
-        value: "",
-        coords: [0, 0],
-      });
+      resetTempAddress();
+      setTempAddress((prev) => ({ ...prev!, id: crypto.randomUUID() }));
     }
   };
   const handleCloseDialog = () => {
