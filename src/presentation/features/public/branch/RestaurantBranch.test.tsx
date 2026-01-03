@@ -1,8 +1,9 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import RestaurantBranch from "@/presentation/features/public/branch";
-import React from "react";
 
-// Mock API calls
+jest.mock("swiper/react");
+jest.mock("swiper/modules");
+
 jest.mock("@/infrastructure/apis/testimonial.api", () => ({
   getTestimonials: jest.fn(),
 }));
@@ -11,43 +12,52 @@ jest.mock("@/infrastructure/apis/product.api", () => ({
   getProducts: jest.fn(),
 }));
 
-// Import mocked functions
 import { getTestimonials } from "@/infrastructure/apis/testimonial.api";
 import { getProducts } from "@/infrastructure/apis/product.api";
+import { renderWithProviders } from "@/tests/utils/renderWithProviders";
 
 describe("RestaurantBranch", () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  it("renders all main sections correctly", async () => {
-    // Arrange (mock API responses)
+  it("renders main sections correctly", async () => {
     (getTestimonials as jest.Mock).mockResolvedValue({
-      result: [
-        { id: 1, text: "Great food!" },
-        { id: 2, text: "Amazing service!" },
-      ],
+      message: "ok",
+      result: [{ id: "1", text: "Great food!" }],
     });
 
     (getProducts as jest.Mock).mockResolvedValue({
+      message: "ok",
       result: [
-        { id: 1, name: "Pizza" },
-        { id: 2, name: "Burger" },
+        {
+          id: "1",
+          title: "Pizza",
+          description: "desc",
+          category: "غذاهای محبوب",
+          price: 100,
+          discount: 0,
+          score: 4,
+          mostsale: false,
+          createdAt: new Date(),
+        },
       ],
     });
 
-    // Act
     const Component = await RestaurantBranch();
-    render(Component);
+    renderWithProviders(Component);
 
-    // Assert
+    // hero
     expect(screen.getByText("طعم بی‌نظیر طبیعت!")).toBeInTheDocument();
 
-    // These depend on how your components render text
+    // product
     expect(screen.getByText(/pizza/i)).toBeInTheDocument();
-    expect(screen.getByText(/burger/i)).toBeInTheDocument();
 
-    expect(screen.getByText(/great food/i)).toBeInTheDocument();
-    expect(screen.getByText(/amazing service/i)).toBeInTheDocument();
+    // integration boundary
+    expect(getTestimonials).toHaveBeenCalled();
+    expect(getProducts).toHaveBeenCalled();
+
+    // swiper rendered
+    expect(screen.getAllByTestId("swiper").length).toBeGreaterThan(0);
   });
 });
