@@ -84,7 +84,7 @@ export default function OtpVerifyForm({
                   ? "border-primary-500 border-2"
                   : otpStatus === "error"
                   ? "border-error-500 border-2"
-                  : "border-x-gray-700"
+                  : "border-gray-700"
               }
               `}
             />
