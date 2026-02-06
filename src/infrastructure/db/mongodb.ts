@@ -1,5 +1,5 @@
-// infrastructure/db/mongodb.ts
 import { MongoClient } from "mongodb";
+import { parse } from "url";
 
 const uri = process.env.MONGODB_URI;
 
@@ -12,7 +12,6 @@ let clientPromise: Promise<MongoClient>;
 
 if (!uri) {
   console.warn("MONGODB_URI not set. Using mock client for build/production.");
-
   // Mock client that resolves without throwing
   clientPromise = Promise.resolve({
     db: (dbName: string) => ({
@@ -49,7 +48,10 @@ if (!uri) {
   }
 }
 
-export const connectToDatabase = async (dbName = "test") => {
+export const connectToDatabase = async () => {
+  if (!uri) throw new Error("MONGODB_URI is required");
+  const parsedUri = parse(uri, true);
+  const dbName = parsedUri.pathname?.slice(1) || "nearfood";
   const client = await clientPromise;
   return client.db(dbName);
 };

@@ -1,14 +1,33 @@
 services:
+  mongo:
+    image: mongo:6.0
+    container_name: nearfood_mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
   app:
-    image: ghcr.io/hamed-bostan/nearfood:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Pull from .env.local (docker-compose auto-loads .env files or you can rename .env.local to .env)
+        # Or fallback to known values
+        NEXTAUTH_SECRET: ${NEXTAUTH_SECRET:-fODUnaS2P8MXiYYxAm8ftv5Ds6i+9Z7j9Ttbcbxoe0I=}
+        NEXTAUTH_URL: ${NEXTAUTH_URL:-http://localhost:3000}
     container_name: nearfood_app
     restart: unless-stopped
     ports:
       - "3000:3000"
     env_file:
-      - .env.production
+      - .env.local
     environment:
-      NODE_ENV: production
+      NODE_ENV: development
+      MONGODB_URI: mongodb://nearfood_mongo:27017/nearfood
+    depends_on:
+      - mongo
 
   n8n:
     image: n8nio/n8n
@@ -17,9 +36,10 @@ services:
     ports:
       - "127.0.0.1:5678:5678"
     env_file:
-      - .env.production
+      - .env.local
     volumes:
       - n8n_data:/home/node/.n8n
 
 volumes:
+  mongo_data:
   n8n_data:

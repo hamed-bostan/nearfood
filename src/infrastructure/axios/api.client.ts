@@ -3,9 +3,7 @@ import axios from "axios";
 const isServer = typeof window === "undefined";
 
 export const api = axios.create({
-  baseURL: isServer
-    ? "http://localhost:3000/api" // internal call inside container
-    : "/api", // browser
+  baseURL: isServer ? "http://localhost:3000/api" : "/api",
   withCredentials: true,
 });
 
@@ -15,5 +13,5 @@ api.interceptors.response.use(
   (error) => {
     console.error("API error:", error.response?.data || error.message);
     return Promise.reject(error);
-  }
+  },
 );
