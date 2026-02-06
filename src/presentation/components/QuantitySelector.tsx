@@ -1,3 +1,4 @@
+import { primary } from "@/lib/theme/colors";
 import formatToPersianStyle from "@/lib/utils/formatToPersianStyle";
 import {
   DeleteOutlineOutlined,
@@ -23,27 +24,27 @@ export default function QuantitySelector({
 }: QuantitySelectorProps) {
   return (
     <div
-      className={`bg-[#E5F2E9] rounded-sm h-8 px-1 flex items-center gap-x-1 w-14 self-center ${styles}`}
+      className={`bg-primary-50 rounded-sm h-8 px-1 flex items-center gap-x-1 w-14 self-center ${styles}`}
     >
       <AddOutlined
         onClick={handleIncrease}
         className="cursor-pointer"
-        sx={{ color: "#417F56", fontSize: 16 }}
+        sx={{ color: primary[500], fontSize: 16 }}
       />
-      <span className="text-[#417F56] text-sm">
+      <span className="text-primary-500 text-sm">
         {selectedItem ? formatToPersianStyle(selectedItem.quantity) : 1}
       </span>
       {selectedItem && selectedItem.quantity > 1 ? (
         <RemoveOutlined
           onClick={handleDecrease}
           className="cursor-pointer"
-          sx={{ color: "#417F56", fontSize: 16 }}
+          sx={{ color: primary[500], fontSize: 16 }}
         />
       ) : (
         <DeleteOutlineOutlined
           onClick={handleRemove}
           className="cursor-pointer"
-          sx={{ color: "#417F56", fontSize: 16 }}
+          sx={{ color: primary[500], fontSize: 16 }}
         />
       )}
     </div>

@@ -10,6 +10,7 @@ import { updateUserProfile } from "@/infrastructure/apis/user.api";
 import { getSession } from "next-auth/react";
 import { UserProfileType } from "@/application/schemas/profile-schema";
 import { AddressType } from "@/application/schemas/address.schema";
+import { gray, primary } from "@/lib/theme/colors";
 
 type UserIdProps = {
   userId: string;
@@ -111,9 +112,9 @@ export default function UserProfileForm({ userId }: UserIdProps) {
           backgroundColor: "transparent",
           display: "flex",
           mx: "auto",
-          borderColor: "#417F56",
-          color: "#417F56",
-          "&:hover": { color: "#fff", backgroundColor: "#417F56" },
+          borderColor: primary[500],
+          color: primary[500],
+          "&:hover": { color: gray[50], backgroundColor: primary[500] },
         }}
       >
         بروز رسانی اطلاعات شخصی

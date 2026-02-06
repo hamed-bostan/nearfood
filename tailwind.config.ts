@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import { primary, gray, error, success, warning } from "./src/lib/theme/colors";
+
 export default {
   darkMode: ["class"],
   content: [
@@ -23,9 +25,11 @@ export default {
         "2xl": "1440px",
       },
       colors: {
-        primary: "#1D4ED8", // Example: Blue-700
-        secondary: "#9333EA", // Example: Purple-600
-        accent: "#FACC15", // Example: Yellow-400
+        primary,
+        gray,
+        error,
+        success,
+        warning,
       },
     },
   },

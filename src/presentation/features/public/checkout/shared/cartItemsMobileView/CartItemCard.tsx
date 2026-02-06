@@ -37,10 +37,10 @@ export default function CartItemCard({ foodItem }: ItemsCardProps) {
       : formatToPersianStyle(discountedPricePerItem);
 
   return (
-    <div className={`grid grid-cols-2 p-2 ${index % 2 === 0 ? "bg-[#F9F9F9]" : "bg-[#EDEDED]"}`}>
+    <div className={`grid grid-cols-2 p-2 ${index % 2 === 0 ? "bg-gray-100" : "bg-gray-200"}`}>
       <div>
-        <h3 className="text-[#353535] text-sm">{title}</h3>
-        <p className="text-[#717171] text-xs">{totalDiscountedPrice}</p>
+        <h3 className="text-gray-800 text-sm">{title}</h3>
+        <p className="text-gray-700 text-xs">{totalDiscountedPrice}</p>
       </div>
       <QuantitySelector
         selectedItem={selectedItem}

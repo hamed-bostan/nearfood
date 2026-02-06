@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CustomButton from "./CustomButton";
 import svgIcon from "@/assets/images/icons/empty-icon.svg";
+import { gray, primary } from "@/lib/theme/colors";
 
 type EmptyStateMessageProps = {
   text: string;
@@ -14,7 +15,7 @@ type EmptyStateMessageProps = {
 
 export default function EmptyStateMessage({ text, button, buttonText, href, onClick }: EmptyStateMessageProps) {
   return (
-    <div className="relative border border-[#CBCBCB] rounded-lg min-h-96">
+    <div className="relative border border-gray-400 rounded-lg min-h-96">
       <Image
         src={svgIcon}
         alt="empty icon"
@@ -22,7 +23,7 @@ export default function EmptyStateMessage({ text, button, buttonText, href, onCl
         height={100}
         className="absolute w-48 h-48 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:w-64 md:h-64"
       />
-      <p className="text-nowrap text-[#717171] text-xs absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:text-sm lg:text-base">
+      <p className="text-nowrap text-gray-700 text-xs absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:text-sm lg:text-base">
         {text}
       </p>
       {button &&
@@ -31,8 +32,8 @@ export default function EmptyStateMessage({ text, button, buttonText, href, onCl
             <CustomButton
               variant="outlined"
               sx={{
-                color: "#417F56",
-                borderColor: "#417F56",
+                color: primary[500],
+                borderColor: primary[500],
                 position: "absolute",
                 top: "50%",
                 left: "50%",
@@ -40,8 +41,8 @@ export default function EmptyStateMessage({ text, button, buttonText, href, onCl
                 width: { xs: "9rem", md: "10rem", lg: "12rem" },
                 backgroundColor: "transparent",
                 "&:hover": {
-                  color: "#FFFFFF",
-                  backgroundColor: "#326343",
+                  color: gray[50],
+                  backgroundColor: primary[700],
                 },
               }}
             >
@@ -53,8 +54,8 @@ export default function EmptyStateMessage({ text, button, buttonText, href, onCl
             onClick={onClick}
             variant="outlined"
             sx={{
-              color: "#417F56",
-              borderColor: "#417F56",
+              color: primary[500],
+              borderColor: primary[500],
               position: "absolute",
               top: "50%",
               left: "50%",
@@ -62,8 +63,8 @@ export default function EmptyStateMessage({ text, button, buttonText, href, onCl
               width: { xs: "9rem", md: "10rem", lg: "12rem" },
               backgroundColor: "transparent",
               "&:hover": {
-                color: "#FFFFFF",
-                backgroundColor: "#326343",
+                color: gray[50],
+                backgroundColor: primary[700],
               },
             }}
           >

@@ -88,7 +88,7 @@ export default function TestimonialUploader({
         <button
           type="submit"
           disabled={isSubmitting}
-          className="px-4 py-2 text-white bg-blue-600 rounded-xl disabled:opacity-50"
+          className="px-4 py-2 text-gray-50 bg-blue-600 rounded-xl disabled:opacity-50"
         >
           {isSubmitting ? "در حال بارگذاری..." : "ثبت نظر"}
         </button>

@@ -7,7 +7,7 @@ export default function FaqTabContent({ activeTab }: FaqTabContentProps) {
 
   return (
     <section className="px-5 pt-3 pb-6">
-      <ul className="border border-[#CBCBCB] rounded-sm px-0.5">
+      <ul className="border border-gray-400 rounded-sm px-0.5">
         {filteredSections.map((section) => (
           <li key={section.id}>
             <FaqAccordion details={[section]} />

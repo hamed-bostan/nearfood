@@ -1,9 +1,9 @@
 import { AddressType } from "@/application/schemas/address.schema";
-import { createContext, ReactNode, useState } from "react";
+import { createContext, Dispatch, ReactNode, SetStateAction, useState } from "react";
 
 type AddressContextType = {
   tempAddress: AddressType | null;
-  setTempAddress: (addr: AddressType | null) => void;
+  setTempAddress: Dispatch<SetStateAction<AddressType | null>>;
   resetTempAddress: () => void;
 };
 

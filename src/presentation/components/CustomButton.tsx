@@ -1,3 +1,4 @@
+import { primary } from "@/lib/theme/colors";
 import { Button, ButtonProps } from "@mui/material";
 import { ReactNode } from "react";
 
@@ -24,14 +25,14 @@ export default function CustomButton({
   return (
     <Button
       type={type}
-      variant={variant} // 'contained', 'outlined', or 'text'
+      variant={variant}
       onClick={onClick}
-      startIcon={startIcon} // Icon at the start
-      endIcon={endIcon} // Icon at the end
+      startIcon={startIcon}
+      endIcon={endIcon}
       sx={{
-        backgroundColor: "#417F56",
+        backgroundColor: primary[500],
         "&:hover": {
-          backgroundColor: "#326343",
+          backgroundColor: primary[700],
         },
         ...sx, // Allow custom styles to override default styles
       }}

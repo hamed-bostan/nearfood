@@ -2,7 +2,7 @@
 
 import { Dialog, DialogTitle, DialogContent, Button } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { useContext, useState, useEffect } from "react"; // Added useEffect
+import { useContext, useState, useEffect } from "react";
 import AddressForm from "./AddressForm";
 import AddressSelector from "./AddressSelector";
 import EmptyStateMessage from "@/presentation/components/EmptyStateMessage";
@@ -15,12 +15,13 @@ import { AddressService } from "@/application/services/address.service";
 import { toast } from "react-toastify";
 import { useOrderContext } from "@/context/OrderContext";
 import { useAddressLogic } from "@/hooks/useAddressLogic";
+import { gray, primary } from "@/lib/theme/colors";
 
 export default function Address({ initialAddresses = [] }: { initialAddresses?: AddressType[] }) {
   const { data: session } = useSession();
   const { selectedAddress, setSelectedAddress } = useOrderContext();
   const { addresses, setAddresses, isLoading, fetchAddresses } = useUserAddresses(initialAddresses);
-  const { setTempAddress, resetTempAddress } = useContext(AddressContext)!;
+  const { tempAddress, setTempAddress, resetTempAddress } = useContext(AddressContext)!;
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState<"location" | "addressForm">("location");
   const [editIndex, setEditIndex] = useState<number | null>(null);
@@ -39,9 +40,11 @@ export default function Address({ initialAddresses = [] }: { initialAddresses?: 
     setOpen(true);
     setStep(goToForm ? "addressForm" : "location");
     setEditIndex(index);
-    resetTempAddress();
     if (index !== null && addresses[index]) {
       setTempAddress(addresses[index]);
+    } else {
+      resetTempAddress();
+      setTempAddress((prev) => ({ ...prev!, id: crypto.randomUUID() }));
     }
   };
   const handleCloseDialog = () => {
@@ -50,6 +53,9 @@ export default function Address({ initialAddresses = [] }: { initialAddresses?: 
     setEditIndex(null);
   };
   const saveAddress = async (newAddress: AddressType) => {
+    if (editIndex === null && addresses.some((a) => a.id === newAddress.id)) {
+      newAddress.id = crypto.randomUUID();
+    }
     const updated =
       editIndex !== null ? addresses.map((a, i) => (i === editIndex ? newAddress : a)) : [...addresses, newAddress];
     setAddresses(updated);
@@ -77,23 +83,23 @@ export default function Address({ initialAddresses = [] }: { initialAddresses?: 
       toast.error("خطا در حذف آدرس.");
     }
   };
-  const handleEdit = (index: number) => handleOpenDialog(true, index);
+  const handleEdit = (index: number) => handleOpenDialog(false, index);
   const handleChange = () => {
     setIsEditing(true);
   };
   return (
     <div>
       {selectedAddress && !isEditing ? (
-        <div className="bg-[#F9F9F9] rounded-md p-4 text-xs text-[#717171] border-2 border-[#417F56]">
-          <p className="text-[#353535] font-medium mb-2">آدرس انتخاب‌شده:</p>
-          <p className="text-[#353535]">{selectedAddress.value}</p>
+        <div className="bg-gray-100 rounded-md p-4 text-xs text-gray-700 border-2 border-primary-500">
+          <p className="text-gray-800 font-medium mb-2">آدرس انتخاب‌شده:</p>
+          <p className="text-gray-800">{selectedAddress.value}</p>
           <Button
             onClick={handleChange}
             variant="outlined"
             sx={{
               mt: 2,
-              color: "#417F56",
-              borderColor: "#417F56",
+              color: primary[500],
+              borderColor: primary[500],
               "&:hover": { backgroundColor: "#417F561A" },
             }}
           >
@@ -131,14 +137,14 @@ export default function Address({ initialAddresses = [] }: { initialAddresses?: 
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            bgcolor: "#EDEDED",
+            bgcolor: gray[200],
             p: 2,
           }}
         >
-          <p className="text-sm md:text-base text-[#353535] select-none font-medium">
-            {step === "location" ? "افزودن آدرس" : editIndex !== null ? "ویرایش آدرس" : "اضافه کردن جزییات"}
+          <p className="text-sm md:text-base text-gray-800 select-none font-medium">
+            {editIndex !== null ? "ویرایش آدرس" : step === "location" ? "افزودن آدرس" : "اضافه کردن جزییات"}
           </p>
-          <Button onClick={handleCloseDialog} sx={{ color: "#717171" }}>
+          <Button onClick={handleCloseDialog} sx={{ color: gray[700] }}>
             <CloseIcon />
           </Button>
         </DialogTitle>
@@ -154,7 +160,7 @@ export default function Address({ initialAddresses = [] }: { initialAddresses?: 
             <AddressForm
               onSaveContactInfo={saveAddress}
               onClose={handleCloseDialog}
-              defaultValues={editIndex !== null ? addresses[editIndex] : undefined}
+              defaultValues={tempAddress ?? undefined}
             />
           )}
         </DialogContent>

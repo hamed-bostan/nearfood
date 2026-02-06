@@ -5,9 +5,9 @@ import { aboutDetailsText } from "@/presentation/constants/about.constants";
 export default function AboutDetails() {
   return (
     <section className="container px-5 py-4 mx-auto lg:px-10 2xl:px-28 ">
-      <h2 className="font-bold mb-2 text-[#353535] 2xl:text-lg">درباره ما</h2>
+      <h2 className="font-bold mb-2 text-gray-800 2xl:text-lg">درباره ما</h2>
       <div className="grid md:grid-cols-2 gap-y-5 md:gap-x-10">
-        <div className="text-xs text-[#717171] xl:gap-x-14 2xl:gap-x-32 md:text-sm lg:text-base">
+        <div className="text-xs text-gray-700 xl:gap-x-14 2xl:gap-x-32 md:text-sm lg:text-base">
           {aboutDetailsText.map((item, index) => (
             <p key={index} className="text-justify">
               {item}

@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
 import { FaqSection } from "@/types/faq.types";
+import { gray } from "@/lib/theme/colors";
 
 export default function FaqAccordion({ details }: { details: FaqSection[] }) {
   const [expanded, setExpanded] = useState<string | false>(false);
@@ -16,7 +17,7 @@ export default function FaqAccordion({ details }: { details: FaqSection[] }) {
   };
 
   return (
-    <div className=" text-[#353535]">
+    <div className=" text-gray-800">
       {details.map((item) => (
         <Accordion
           key={item.id}
@@ -26,7 +27,7 @@ export default function FaqAccordion({ details }: { details: FaqSection[] }) {
           square
           sx={{
             boxShadow: "none",
-            borderBottom: "1px solid #CBCBCB",
+            borderBottom: `1px solid ${gray[400]}`,
           }}
         >
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>

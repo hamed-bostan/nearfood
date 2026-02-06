@@ -9,7 +9,7 @@ export default function LogoutBody() {
 
   return (
     <div className="px-6 py-4 lg:pt-8 lg:pb-6 lg:px-14">
-      <p className="text-[#353535] text-xs text-center mb-8 md:text-sm">آیا مایل به خروج از حساب کاربری خود هستید؟</p>
+      <p className="text-gray-800 text-xs text-center mb-8 md:text-sm">آیا مایل به خروج از حساب کاربری خود هستید؟</p>
       <div className="flex gap-x-4">
         <CustomButton
           onClick={closeLogoutDialog}
@@ -25,7 +25,7 @@ export default function LogoutBody() {
 
         <button
           onClick={() => signOut({ callbackUrl: "/" })}
-          className="bg-[#FFF2F2] text-[#C30000] w-full text-xs md:text-sm hover:bg-[#C30000] hover:text-[#FFF] rounded flex items-center justify-center px-4"
+          className="bg-error-50 text-error-500 w-full text-xs md:text-sm hover:bg-error-500 hover:text-gray-50 rounded flex items-center justify-center px-4"
         >
           خروج
         </button>

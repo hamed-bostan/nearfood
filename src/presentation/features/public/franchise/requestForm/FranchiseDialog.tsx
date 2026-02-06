@@ -3,6 +3,7 @@
 import { Dialog, DialogTitle, DialogContent, Button, DialogActions } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { useFranchiseDialog } from "@/context/franchise-dialog.context";
+import { gray } from "@/lib/theme/colors";
 
 export function FranchiseDialog() {
   const { isFranchiseDialogOpen, closeFranchiseDialog, submittedData } = useFranchiseDialog();
@@ -21,16 +22,16 @@ export function FranchiseDialog() {
         },
       }}
     >
-      <div className="bg-[#EDEDED] flex justify-between">
+      <div className="bg-gray-200 flex justify-between">
         <DialogTitle
           sx={{
             padding: { xs: 1, md: 2 },
           }}
         >
-          <p className="text-sm md:text-base text-[#353535]">اطلاعات شما</p>
+          <p className="text-sm md:text-base text-gray-800">اطلاعات شما</p>
         </DialogTitle>
         <DialogActions>
-          <Button onClick={closeFranchiseDialog} sx={{ color: "#717171" }}>
+          <Button onClick={closeFranchiseDialog} sx={{ color: gray[700] }}>
             <CloseIcon />
           </Button>
         </DialogActions>

@@ -9,7 +9,7 @@ export default function FoodList({
   title,
   filter,
   containerStyle = "",
-  titleStyle = "text-[#353535]",
+  titleStyle = "text-gray-800",
   products,
 }: FoodListProps) {
   const filteredFood = products.filter((item) => item.filter === filter);

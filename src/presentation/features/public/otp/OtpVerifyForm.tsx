@@ -61,9 +61,9 @@ export default function OtpVerifyForm({
 
   return (
     <>
-      <p className="text-lg font-bold text-[#353535]">کد تایید</p>
-      <p className="text-[#717171] text-sm">کد تایید پنج‌رقمی به شماره {phone} ارسال شد.</p>
-      <p className="text-[#353535] text-sm">برای ورود به عنوان ادمین کد 54321 را بجا کد ارسال شده وارد کنید.</p>
+      <p className="text-lg font-bold text-gray-800">کد تایید</p>
+      <p className="text-gray-700 text-sm">کد تایید پنج‌رقمی به شماره {phone} ارسال شد.</p>
+      <p className="text-gray-800 text-sm">برای ورود به عنوان ادمین کد 54321 را بجا کد ارسال شده وارد کنید.</p>
       <form onSubmit={onSubmit} className="flex flex-col">
         <div className="flex gap-4 mb-2" dir="ltr">
           {otpValues.map((val, index) => (
@@ -79,29 +79,29 @@ export default function OtpVerifyForm({
               onChange={(e) => handleChange(e, index)}
               onKeyDown={(e) => handleKeyDown(e, index)}
               autoFocus={index === 0}
-              className={`h-8 text-center border rounded w-[3.125rem] transition-colors outline-none focus:border-2 focus:border-[#717171] ${
+              className={`h-8 text-center border rounded w-[3.125rem] transition-colors outline-none focus:border-2 focus:border-gray-700 ${
                 otpStatus === "success"
-                  ? "border-[#417F56] border-2"
+                  ? "border-primary-500 border-2"
                   : otpStatus === "error"
-                  ? "border-[#C30000] border-2"
-                  : "border-[#717171]"
+                  ? "border-error-500 border-2"
+                  : "border-gray-700"
               }
               `}
             />
           ))}
         </div>
 
-        <div className="flex gap-x-1 text-[#717171] text-xs items-center mb-4">
+        <div className="flex gap-x-1 text-gray-700 text-xs items-center mb-4">
           <AccessTimeIcon fontSize="small" />
           {timeLeft > 0 ? (
             <p className="ml-auto">{formatTime()} تا دریافت مجدد کد</p>
           ) : (
-            <button type="button" className="ml-auto text-[#417F56]" onClick={handleResendClick}>
+            <button type="button" className="ml-auto text-primary-500" onClick={handleResendClick}>
               دریافت مجدد کد
             </button>
           )}
 
-          <button type="button" onClick={goBack} className="text-[#417F56]">
+          <button type="button" onClick={goBack} className="text-primary-500">
             ویرایش شماره
           </button>
         </div>

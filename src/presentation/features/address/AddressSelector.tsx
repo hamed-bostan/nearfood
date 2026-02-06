@@ -78,7 +78,7 @@ export default function AddressSelector({ onSubmitLocation }: AddressSelectorPro
       </MapContainer>
 
       <button
-        className="absolute flex items-center justify-center gap-x-1 top-10 right-5 h-8 z-[1000] px-2 text-[#417F56] bg-[#FFFFFF] rounded-md"
+        className="absolute flex items-center justify-center gap-x-1 top-10 right-5 h-8 z-[1000] px-2 text-primary-500 bg-gray-50 rounded-md"
         onClick={handleGetLocation}
       >
         <Image src={gpsIcon} alt="location icon" />
@@ -86,7 +86,7 @@ export default function AddressSelector({ onSubmitLocation }: AddressSelectorPro
       </button>
 
       {tempAddress?.value && (
-        <div className="absolute flex items-center p-2 text-sm bg-[#FFFFFF] rounded-md shadow-md select-none gap-x-1 bottom-16 right-4 left-4 text-[#353535] min-h-9">
+        <div className="absolute flex items-center p-2 text-sm bg-gray-50 rounded-md shadow-md select-none gap-x-1 bottom-16 right-4 left-4 text-gray-800 min-h-9">
           <Image src={locationIcon} alt="location icon" />
           <p>{tempAddress.value}</p>
         </div>
@@ -94,7 +94,7 @@ export default function AddressSelector({ onSubmitLocation }: AddressSelectorPro
 
       <button
         onClick={onSubmitLocation}
-        className="absolute translate-x-1/2 bg-[#417F56] bottom-4 right-1/2 min-w-40 lg:min-w-64 rounded-md text-[#FFFFFF] min-h-8 text-sm shadow-md"
+        className="absolute translate-x-1/2 bg-primary-500 bottom-4 right-1/2 min-w-40 lg:min-w-64 rounded-md text-gray-50 min-h-8 text-sm shadow-md"
       >
         ثبت موقعیت
       </button>

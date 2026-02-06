@@ -5,7 +5,7 @@ import clockIcon from "@/assets/images/icons/clock.svg";
 
 export default function Address() {
   return (
-    <address className="not-italic grid grid-cols-2 text-xs text-[#353535] gap-y-2 p-2 border-2 border-[#417F56] rounded-sm absolute  left-5 right-5 z-50 bg-[#FFFFFF] md:grid-cols-3 lg:text-sm md:left-20 md:right-20 lg:left-56 lg:right-56 lg:p-3 -bottom-10 md:-bottom-[3.75rem] lg:-bottom-20">
+    <address className="not-italic grid grid-cols-2 text-xs text-gray-800 gap-y-2 p-2 border-2 border-primary-500 rounded-sm absolute  left-5 right-5 z-50 bg-gray-50 md:grid-cols-3 lg:text-sm md:left-20 md:right-20 lg:left-56 lg:right-56 lg:p-3 -bottom-10 md:-bottom-[3.75rem] lg:-bottom-20">
       <div className="flex items-center col-span-full gap-x-1 md:col-start-2 md:col-span-1 md:flex md:flex-col">
         <Image
           src={locationIcon}

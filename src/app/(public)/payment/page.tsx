@@ -25,8 +25,8 @@ export default async function PaymentPage({ searchParams }: PaymentPageProps) {
           mainText="پرداخت شما با موفقیت انجام شد!"
           secondaryText={`کد رهگیری سفارش شما: ${status.refNumber}`}
           secondButtonText="پیگیری سفارش"
-          mainTextColor="#417F56"
-          secondaryTextColor="#417F56"
+          mainTextColor="text-primary-500"
+          secondaryTextColor="text-primary-500"
         />
       ) : (
         <PaymentMessage
@@ -34,8 +34,8 @@ export default async function PaymentPage({ searchParams }: PaymentPageProps) {
           mainText="پرداخت شما ناموفق بود!"
           secondaryText={`کد رهگیری تراکنش شما: ${trackId}`}
           secondButtonText="پرداخت مجدد"
-          mainTextColor="#C30000"
-          secondaryTextColor="#353535"
+          mainTextColor="text-error-500"
+          secondaryTextColor="text-gray-800"
         />
       )}
     </>

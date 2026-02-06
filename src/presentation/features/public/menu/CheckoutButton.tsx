@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import CustomButton from "@/presentation/components/CustomButton";
+import { gray, primary } from "@/lib/theme/colors";
 
 export default function CheckoutButton() {
   return (
@@ -12,15 +13,15 @@ export default function CheckoutButton() {
         startIcon={<ShoppingCartOutlinedIcon sx={{ width: { xs: 16, md: 20 }, height: { xs: 16, md: 20 } }} />}
         sx={{
           p: 0,
-          color: "#417F56",
-          borderColor: "#417F56",
+          color: primary[500],
+          borderColor: primary[500],
           width: { xs: "6rem", md: "8rem", lg: "11rem" },
           height: { xs: "2rem", md: "2.5rem" },
           backgroundColor: "transparent",
           fontSize: { xs: "0.75rem", md: "0.875rem" },
           "&:hover": {
-            color: "#fff",
-            backgroundColor: "#417F56",
+            color: gray[50],
+            backgroundColor: primary[500],
           },
         }}
       >

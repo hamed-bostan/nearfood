@@ -30,12 +30,12 @@ export default function FoodDetails({ foodItem }: FoodItemProps) {
   const handleRemove = () => dispatch(removeItem({ id }));
 
   return (
-    <div className="col-span-2 row-span-3 grid grid-cols-2 md:grid-rows-4 lg:grid-rows-3 p-2 text-[#353535] md:text-sm lg:p-0 lg:py-3 lg:ml-3 lg:mr-5 md:gap-y-1 lg:gap-y-2 md:grid-cols-3">
+    <div className="col-span-2 row-span-3 grid grid-cols-2 md:grid-rows-4 lg:grid-rows-3 p-2 text-gray-800 md:text-sm lg:p-0 lg:py-3 lg:ml-3 lg:mr-5 md:gap-y-1 lg:gap-y-2 md:grid-cols-3">
       <h3 className="lg:text-base md:font-semibold md:col-span-2">{title}</h3>
       {discount && discount > 0 && (
         <div className="flex items-center mr-auto gap-x-2 md:row-start-2 md:col-start-3">
-          <del className="text-[#ADADAD] line-through">{formatToPersianStyle(price)}</del>
-          <span className="text-[#C30000] bg-[#FFF2F2] rounded-lg px-1">{formatToPersianStyle(discount)} %</span>
+          <del className="text-gray-500 line-through">{formatToPersianStyle(price)}</del>
+          <span className="text-error-500 bg-error-50 rounded-lg px-1">{formatToPersianStyle(discount)} %</span>
         </div>
       )}
       <p className="md:row-span-2 md:text-xs lg:text-sm md:row-start-2 md:col-span-2">{description.slice(0, 40)} ...</p>

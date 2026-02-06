@@ -64,7 +64,7 @@ export default function RequestForm() {
   return (
     <>
       <FormProvider {...methods}>
-        <form onSubmit={methods.handleSubmit(onSubmit)} className="border border-[#CBCBCB] py-8 px-6 rounded-md my-9">
+        <form onSubmit={methods.handleSubmit(onSubmit)} className="border border-gray-400 py-8 px-6 rounded-md my-9">
           <span className="block text-center mb-11">فرم درخواست نمایندگی</span>
           <IndividualProfile />
           <AddressProperty />

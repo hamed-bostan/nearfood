@@ -10,6 +10,7 @@ import Popover from "@mui/material/Popover";
 import { RootState } from "@/store";
 import { signOut, useSession } from "next-auth/react";
 import { ActionMenuItem, LinkMenuItem, MenuItem, userMenuItems } from "../../UserMenuItems";
+import { gray, primary } from "@/lib/theme/colors";
 
 function isLink(item: MenuItem): item is LinkMenuItem {
   return "href" in item;
@@ -30,13 +31,13 @@ export default function ActionButton() {
         <Link href="/checkout">
           <div
             className={`w-8 h-8 flex justify-center items-center rounded-sm  
-              ${pathname === "/checkout" ? "bg-[#417F56] text-white" : "bg-[#E5F2E9] text-[#417F56]"}`}
+              ${pathname === "/checkout" ? "bg-primary-500 text-gray-50" : "bg-primary-50 text-primary-500"}`}
           >
             <ShoppingCartOutlined fontSize="small" />
           </div>
         </Link>
         {itemsCounter > 0 && (
-          <span className="text-xs text-white bg-[#61AE7B] rounded-full absolute top-1 right-0 w-3 h-3 p-2 flex justify-center items-center">
+          <span className="text-xs text-gray-50 bg-[#61AE7B] rounded-full absolute top-1 right-0 w-3 h-3 p-2 flex justify-center items-center">
             {itemsCounter}
           </span>
         )}
@@ -79,14 +80,14 @@ function UserMenuPopover() {
           onClick={handleClick}
           type="button"
           className={`w-12 h-8 rounded-sm cursor-pointer flex justify-center items-center 
-            ${pathname === "/userpanel" ? "bg-[#417F56] text-white" : "bg-[#E5F2E9] text-[#417F56]"}`}
+            ${pathname === "/userpanel" ? "bg-primary-500 text-gray-50" : "bg-primary-50 text-primary-500"}`}
         >
           <Person2Outlined fontSize="small" />
           <ArrowDownwardOutlined sx={{ fontSize: 18 }} />
         </button>
       ) : (
-        <Link href="/auth" className="bg-[#E5F2E9] w-8 h-8 rounded-sm cursor-pointer flex justify-center items-center">
-          <Person2Outlined fontSize="small" sx={{ color: "#417F56" }} />
+        <Link href="/auth" className="bg-primary-50 w-8 h-8 rounded-sm cursor-pointer flex justify-center items-center">
+          <Person2Outlined fontSize="small" sx={{ color: primary[500] }} />
         </Link>
       )}
 
@@ -113,8 +114,8 @@ function UserMenuPopover() {
                     href={item.href}
                     className="flex items-center py-2 text-xs cursor-pointer gap-x-1 w-fit"
                   >
-                    <item.icon sx={{ color: "#353535", fontSize: 18 }} />
-                    <span className="text-[#353535]">{item.label}</span>
+                    <item.icon sx={{ color: gray[800], fontSize: 18 }} />
+                    <span className="text-gray-800">{item.label}</span>
                   </Link>
                 ) : isAction(item) ? (
                   <button
@@ -124,8 +125,8 @@ function UserMenuPopover() {
                     }}
                     className="flex items-center py-2 text-xs cursor-pointer gap-x-1 w-fit"
                   >
-                    <item.icon sx={{ color: "#353535", fontSize: 18 }} />
-                    <span className="text-[#353535]">{item.label}</span>
+                    <item.icon sx={{ color: gray[800], fontSize: 18 }} />
+                    <span className="text-gray-800">{item.label}</span>
                   </button>
                 ) : null}
 

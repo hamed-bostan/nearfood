@@ -1,5 +1,6 @@
 "use client";
 
+import { gray, primary } from "@/lib/theme/colors";
 import CustomButton from "@/presentation/components/CustomButton";
 import Link from "next/link";
 
@@ -14,13 +15,13 @@ export default function ActionButtons() {
           p: 0,
           width: "100%",
           height: { xs: "1.5rem", md: "2.25rem" },
-          color: "#417F56",
-          borderColor: "#417F56",
+          color: primary[500],
+          borderColor: primary[500],
           fontSize: { xs: "0.75rem", md: "0.875rem" },
           backgroundColor: "transparent",
           "&:hover": {
-            color: "#fff",
-            backgroundColor: "#417F56",
+            color: gray[50],
+            backgroundColor: primary[500],
           },
         }}
       >

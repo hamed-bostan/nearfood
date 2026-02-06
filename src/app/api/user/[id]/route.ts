@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getUserByIdUseCase } from "@/domain/use-cases/user/getUserById.usecase";
 import { updateUserByIdUseCase } from "@/domain/use-cases/user/updateUserById.usecase";
-import { adminFormProfileSchema } from "@/application/schemas/profile-schema";
+import { UserUpdateDtoSchema } from "@/application/dto/users/user.dto";
 import { requireSelfOrAdmin } from "@/middleware/requireSelfOrAdmin";
 import { apiResponseErrorHandler } from "@/infrastructure/error-handlers/apiResponseErrorHandler";
 import { UserRepository } from "@/infrastructure/repositories/user.repository";
@@ -17,7 +17,6 @@ export async function GET(req: NextRequest, context: { params: Promise<{ id: str
 
     await requireSelfOrAdmin(req, id);
 
-    // Inject repository
     const repo = new UserRepository();
 
     const user = await getUserByIdUseCase(repo, id);
@@ -41,9 +40,8 @@ export async function PUT(req: NextRequest, context: { params: Promise<{ id: str
     const body = await req.json();
     delete body._id;
 
-    const validatedData = adminFormProfileSchema.parse(body);
+    const validatedData = UserUpdateDtoSchema.parse(body);
 
-    // Inject repository
     const repo = new UserRepository();
 
     const updatedUser = await updateUserByIdUseCase(repo, id, validatedData);

@@ -6,7 +6,7 @@ import { SidebarProps } from "@/types/userpanel.types";
 
 export default function Sidebar({ setActiveTab, activeTab, user }: SidebarProps & { user: UserType }) {
   return (
-    <section className="hidden md:block border border-[#CBCBCB] rounded-lg px-2 py-4 min-h-[21.375rem] max-h-[21.375rem] lg:min-w-72">
+    <section className="hidden md:block border border-gray-400 rounded-lg px-2 py-4 min-h-[21.375rem] max-h-[21.375rem] lg:min-w-72">
       <UserInformation user={user} />
       <Divider />
       <SidebarMenu setActiveTab={setActiveTab} activeTab={activeTab} />

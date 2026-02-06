@@ -25,13 +25,13 @@ export default function Profile() {
   }
 
   if (!session?.user?.id) {
-    return <p className="text-center text-red-500">کاربر یافت نشد.</p>;
+    return <p className="text-center text-error-500">کاربر یافت نشد.</p>;
   }
 
   const userId = session.user.id;
 
   return (
-    <div className="md:border md:border-[#CBCBCB] md:rounded-lg md:p-5 md:min-h-[30rem]">
+    <div className="md:border md:border-gray-400 md:rounded-lg md:p-5 md:min-h-[30rem]">
       <HeaderDesktop label="پروفایل من" style="mb-8" />
       <FormProvider {...methods}>
         <UserProfileForm userId={userId} />

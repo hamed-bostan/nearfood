@@ -2,20 +2,21 @@ import Checkbox from "@mui/material/Checkbox";
 import { Divider } from "@mui/material";
 import { ShoppingBagOutlined, LocalShippingOutlined } from "@mui/icons-material";
 import { useOrderContext } from "@/context/OrderContext";
+import { gray, success } from "@/lib/theme/colors";
 
 export default function DeliveryMethod() {
   const { deliveryMethod, setDeliveryMethod } = useOrderContext();
 
   return (
-    <div className="border border-[#CBCBCB] rounded-lg text-xs text-[#717171] p-4 md:text-sm md:flex justify-between mb-3 md:mb-5">
+    <div className="border border-gray-400 rounded-lg text-xs text-gray-700 p-4 md:text-sm md:flex justify-between mb-3 md:mb-5">
       <div className="flex items-center mb-2 gap-x-1 md:mb-0">
         <LocalShippingOutlined
           sx={{
-            color: "#353535",
+            color: gray[800],
             fontSize: { xs: 18, md: 20 },
           }}
         />
-        <span className="text-[#353535] text-sm md:text-base text-nowrap">روش تحویل سفارش</span>
+        <span className="text-gray-800 text-sm md:text-base text-nowrap">روش تحویل سفارش</span>
       </div>
       <Divider className="md:hidden" />
       <div className="flex items-center mt-2 mb-4 gap-x-1 lg:gap-x-2 md:my-0">
@@ -28,9 +29,9 @@ export default function DeliveryMethod() {
             "&.MuiCheckbox-root": {
               p: 0,
             },
-            color: "#00BA88",
+            color: success[300],
             "&.Mui-checked": {
-              color: "#00BA88",
+              color: success[300],
             },
           }}
         />
@@ -42,7 +43,7 @@ export default function DeliveryMethod() {
         </div>
         <LocalShippingOutlined
           sx={{
-            color: "#353535",
+            color: gray[800],
             fontSize: { xs: 18, md: 20 },
           }}
         />
@@ -57,9 +58,9 @@ export default function DeliveryMethod() {
             "&.MuiCheckbox-root": {
               p: 0,
             },
-            color: "#00BA88",
+            color: success[300],
             "&.Mui-checked": {
-              color: "#00BA88",
+              color: success[300],
             },
           }}
         />
@@ -71,7 +72,7 @@ export default function DeliveryMethod() {
         </div>
         <ShoppingBagOutlined
           sx={{
-            color: "#717171",
+            color: gray[700],
             fontSize: { xs: 18, md: 20 },
           }}
         />

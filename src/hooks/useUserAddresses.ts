@@ -13,7 +13,7 @@ export function useUserAddresses(initialAddresses: AddressType[] = []) {
 
   const [addresses, setAddresses] = useState<AddressType[]>(initialAddresses);
 
-  // 🚀 If we have initial addresses, we are NOT loading
+  // If we have initial addresses, we are NOT loading
   const [isLoading, setIsLoading] = useState(!hasInitial);
 
   const fetchAddresses = async () => {

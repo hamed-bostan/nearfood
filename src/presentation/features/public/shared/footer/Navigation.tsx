@@ -33,7 +33,7 @@ const footerIcons: FooterIcon[] = [
 
 export default function Navigation() {
   return (
-    <nav className="col-span-2 md:col-span-1 grid grid-cols-2 grid-rows-5 text-[#EDEDED]">
+    <nav className="col-span-2 md:col-span-1 grid grid-cols-2 grid-rows-5 text-gray-200">
       <h2 className="mb-2 text-sm md:text-base md:mb-3 md:font-medium">
         دسترسی آسان
       </h2>

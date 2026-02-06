@@ -4,6 +4,7 @@ import { Dialog, DialogTitle, DialogContent } from "@mui/material";
 import { useLogoutDialog } from "@/context/logout-dialog.context";
 import LogoutBody from "./LogoutBody";
 import LogoutTitle from "./LogoutTitle";
+import { gray } from "@/lib/theme/colors";
 
 export default function Logout() {
   const { isLogoutDialogOpen, closeLogoutDialog } = useLogoutDialog();
@@ -27,7 +28,7 @@ export default function Logout() {
             padding: 0,
             w: "100%",
             position: "relative",
-            backgroundColor: "#EDEDED",
+            backgroundColor: gray[200],
           }}
         >
           <LogoutTitle />

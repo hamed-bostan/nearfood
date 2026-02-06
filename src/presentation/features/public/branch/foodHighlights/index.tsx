@@ -10,8 +10,8 @@ export default function FoodHighlights({ products }: { products: ProductType[] }
       <FoodList
         title="غذاهای محبوب"
         filter="غذاهای محبوب"
-        containerStyle="bg-[#315F41]"
-        titleStyle="text-[#fff]"
+        containerStyle="bg-primary-700"
+        titleStyle="text-gray-50"
         products={products}
       />
       <FoodList title="غذاهای غیر ایرانی" filter="غذاهای غیر ایرانی" products={products} />
